@@ -37,6 +37,8 @@ function afficher_messages(){
     document.querySelector(".messages").innerHTML = messages[index_message]
 }
 
+//IMAGES LIKES
+
 function recuperer_img_like(){
     let images = [
         { url: "images/like-4.jpg", min: 200},
@@ -49,13 +51,25 @@ function recuperer_img_like(){
    return result.url
 }
 
+//LIKE
+
 document.querySelector("#like").addEventListener("click",mettreAJourMonResult)
 function mettreAJourMonResult(){
     like = like + nb_like_per_click;
-    document.querySelector(".result").innerHTML = like
+    document.querySelector(".result").innerHTML = like;
     document.getElementById('like').src =recuperer_img_like();
-    afficher_messages()
+    afficher_messages();
+    Son();
+    Pluie();
 }
+
+//SON au click
+
+let a= new Audio ('son/pouce-facebook.mp3');
+function Son() {
+    a.play();
+};
+
 
 // Multiplicateur
 
@@ -108,18 +122,36 @@ function augmenterBonus(){
 }
 
 // COOKIES BONUS
-
-const NB_LIKE = 10;
-for (let index = 0; index < NB_LIKE; index++) {
-    const element = document.createElement('img');
-    element.src = './images/coeurs(1).png'
-    element.className = 'image'
-    x = Math.round(Math.random() * 100)
-    y = Math.round(Math.random() * 10)
-    element.style.left = x + 'vw';
-    element.style.top = y + 'vh';
-    document.querySelector('body').appendChild(element)
+function Pluie(){
+if(like>1000){
+        const NB_LIKE = 10;
+        for (let index = 0; index < NB_LIKE; index++) {
+            const element = document.createElement('img');
+            element.src = './images/coeurs (1).png'
+            element.className = 'image'
+            x = Math.round(Math.random() * 100)
+            y = Math.round(Math.random() * 10)
+            element.style.left = x + 'vw';
+            element.style.top = y + 'vh';
+            document.querySelector('main').appendChild(element)
+        }
+    }
 }
+//Texte aléatoire
 
-// Pluie de like
-
+function getPhrase(){
+    let listePhrases = [
+        "Le like est une indication par laquelle qqn signifie qu'il apprécie votre contenu.",
+        "Postez régulièrement à des heures fixes.",
+        "Boostez vos publications grâce aux publicités",
+        "Utilisez des #",
+    ];
+    let Phrases =[
+        "Les bonus sont un bon moyen de gagner plus de like"
+    ]
+    document.getElementById("phrase").innerHTML = listePhrases[Math.trunc(Math.random() * listePhrases.length)];
+    if (like > 500){
+        document.getElementById("phrase").innerHTML = Phrases;
+    } ;
+}
+setInterval(getPhrase, 3000);
