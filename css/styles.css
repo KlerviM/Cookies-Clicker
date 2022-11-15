@@ -1,0 +1,111 @@
+/* MISE EN PAGE GENERAL */
+
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+/* Titre */
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+}
+/* Bouton */
+button{
+    display: block;
+    margin-top: 20px 10px;
+    color: white;
+    background: black;
+    border-radius: 20px;
+    border: 1px solid white;
+    padding: 10px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    align-items: center;
+}
+/* Class Fonctionnel */
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+img{
+    width: 100%;
+}
+
+body {
+    background-image:url(../images/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+/* === HEADER === */
+
+/* === MAIN === */
+.img-centrer{
+align-items: center;
+}
+
+#like {
+    width: 90%;
+    margin-top: 40px;
+}
+
+.nb-likes{
+margin-right: -90px;
+}
+
+.result{
+    margin-left: 100px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.container-bonus{
+    margin-left: 500px;
+}
+.abonne{
+    margin-left: 100px;
+    font-size: 20px;
+}
+
+
+@keyframes pluie {
+    from {
+    transform: translateY(-100%)
+    }
+    
+    to {
+    transform: translateY(150vh)
+    }
+    }
+
+.image img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: pluie 4s linear 0s normal;
+    transform: translateY(-30vh);
+    width: 64px;
+    }
+/* === FOOTER === */
